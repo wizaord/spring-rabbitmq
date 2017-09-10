@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class Application {
 
-    @Profile({"receiver","sender", "all"})
+    @Profile({"receiver", "sender", "all"})
     @Bean
     public CommandLineRunner tutorial() {
         return new ApplicationRunner();
