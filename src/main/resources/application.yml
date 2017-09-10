@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: all
+
+logging:
+  level:
+    org: ERROR
+
+tutorial:
+  client:
+    duration: 10000
