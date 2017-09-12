@@ -1,6 +1,5 @@
 package fr.wizaord.rabbitmq;
 
-import fr.wizaord.rabbitmq.P1.twoQueuesReceiver.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

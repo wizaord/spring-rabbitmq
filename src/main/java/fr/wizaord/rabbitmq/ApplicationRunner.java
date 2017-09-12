@@ -1,4 +1,4 @@
-package fr.wizaord.rabbitmq.P1.twoQueuesReceiver;
+package fr.wizaord.rabbitmq;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
