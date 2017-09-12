@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: all
+    active: prop-2queues, all
 
 logging:
   level:

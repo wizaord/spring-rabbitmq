@@ -1,10 +1,11 @@
-package fr.wizaord.rabbitmq;
+package fr.wizaord.rabbitmq.P1.twoQueuesReceiver;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+@Profile("prop-2queues")
 @Configuration
 public class ApplicationConfiguration {
 

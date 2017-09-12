@@ -1,5 +1,6 @@
 package fr.wizaord.rabbitmq;
 
+import fr.wizaord.rabbitmq.P1.twoQueuesReceiver.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +17,6 @@ public class Application {
     public CommandLineRunner tutorial() {
         return new ApplicationRunner();
     }
-
 
     public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(Application.class, args);
