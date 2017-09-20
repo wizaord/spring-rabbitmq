@@ -19,7 +19,6 @@ services:
     environment:
       - ERLANG_COOKIE=abcdefg
       - CLUSTER_WITH=rabbit1
-      - ENABLE_RAM=true
       - RABBITMQ_HIPE_COMPILE=1
     ports:
       - "5673:5672"
