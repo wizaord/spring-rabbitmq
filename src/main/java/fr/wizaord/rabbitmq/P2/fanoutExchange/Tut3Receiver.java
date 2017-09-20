@@ -4,10 +4,10 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.util.StopWatch;
 
 public class Tut3Receiver {
-    @RabbitListener(queues = "#{autoDeleteQueue1.name}")
-    public void receive1(String in) throws InterruptedException {
-        receive(in, 1);
-    }
+//    @RabbitListener(queues = "#{autoDeleteQueue1.name}")
+//    public void receive1(String in) throws InterruptedException {
+//        receive(in, 1);
+//    }
 
     @RabbitListener(queues = "#{autoDeleteQueue2.name}")
     public void receive2(String in) throws InterruptedException {
@@ -18,10 +18,11 @@ public class Tut3Receiver {
         StopWatch watch = new StopWatch();
         watch.start();
         System.out.println("instance " + receiver + " [x] Received '" + in + "'");
-        doWork(in);
+//        doWork(in);
         watch.stop();
         System.out.println("instance " + receiver + " [x] Done in "
                 + watch.getTotalTimeSeconds() + "s");
+        throw new RuntimeException("test");
     }
 
     private void doWork(String in) throws InterruptedException {

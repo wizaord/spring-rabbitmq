@@ -1,11 +1,11 @@
 spring:
   profiles:
-    active: prop-2queues, all
-
+    active: prop3-fanout,sender,receiver
+#    active: prop-2queues, all
 logging:
   level:
-    org: ERROR
+    org: WARN
 
 tutorial:
   client:
-    duration: 10000
+    duration: 60000

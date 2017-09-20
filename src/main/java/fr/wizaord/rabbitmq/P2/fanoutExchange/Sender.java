@@ -28,6 +28,9 @@ public class Sender {
         }
         builder.append(Integer.toString(++count));
         String message = builder.toString();
+        template.setConfirmCallback((correlationData, ack, cause) -> {
+            System.out.println("receive ack => " + ack);
+        });
         template.convertAndSend(fanout.getName(), "", message);
         System.out.println(" [x] Sent '" + message + "'");
     }
