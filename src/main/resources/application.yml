@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: prop3-fanout,sender,receiver
+    active: P3,sender,receiver
 #    active: prop-2queues, all
 logging:
   level:

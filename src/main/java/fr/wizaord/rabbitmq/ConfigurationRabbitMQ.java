@@ -3,6 +3,8 @@ package fr.wizaord.rabbitmq;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +14,11 @@ public class ConfigurationRabbitMQ {
 
     private final String[] adminUris = { "http://localhost:15672" };
     private final String[] nodes = { "rabbit@host1", "rabbit@host2" };
+
+    @Bean
+    public MessageConverter jsonMessageConverter(){
+        return new Jackson2JsonMessageConverter();
+    }
 
     @Bean
     public ConnectionFactory connectionFactory() {
@@ -29,6 +36,7 @@ public class ConfigurationRabbitMQ {
         factory.setConnectionFactory(connectionFactory());
         factory.setConcurrentConsumers(3);
         factory.setMaxConcurrentConsumers(10);
+        factory.setMessageConverter(jsonMessageConverter());
         return factory;
     }
 
